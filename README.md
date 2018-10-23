@@ -9,7 +9,7 @@
 - Detach from the node with `Ctrl-a d`
 - log out of hebbe
 
-## On your own machine
+## On your own machine:
 It's much more convenient if you have SSH keys and proxies
 set up. (Proxy examples in [ssh_config](my_machine/ssh_config))
 
