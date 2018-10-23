@@ -1,0 +1,38 @@
+#!/bin/bash
+
+function usage {
+    >&2 echo "Usage: `basename $0` <hostname>:<desktop>"
+    >&2 echo "    sets up a SSH tunnel to the specifiec VNC desktop"
+    exit 1
+}
+
+function list_tunnels {
+    ps x | grep ssh | grep ":59[0-9][0-9] "
+}
+
+while getopts ":l" opt; do
+    case $opt in
+        l)
+	    list_tunnels
+	    exit
+            ;;
+        \?)
+            >&2 echo "Invalid option: -${OPTARG}"
+	    usage
+            ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+if [[ $# -ne 1 ]]; then
+    usage
+fi
+
+vnc_str=(${1//:/ })
+if [[ ${#vnc_str[@]} -ne 2 ]]; then
+    usage
+fi
+
+port=$((5900 + ${vnc_str[1]}))
+ssh -N -L ${port}:localhost:${port} ${vnc_str[0]} &
+

@@ -1,0 +1,1 @@
+export PATH=/priv/c3-oso/sbsw/containers/bin:$PATH
