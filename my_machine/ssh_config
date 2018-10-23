@@ -1,12 +1,12 @@
 ForwardAgent yes
 
 Host bele
-	User sbourke
-	HostName bele.oso.chalmers.se
+    User sbourke
+    HostName bele.oso.chalmers.se
 Host hebbe
-        User bourke
-	HostName hebbe.c3se.chalmers.se
-        ProxyCommand ssh bele -W %h:%p
+    User bourke
+    HostName hebbe.c3se.chalmers.se
+    ProxyCommand ssh bele -W %h:%p
 Host hebbe??-?
-        User bourke
-        ProxyCommand ssh hebbe -W %h:%p
+    User bourke
+    ProxyCommand ssh hebbe -W %h:%p
