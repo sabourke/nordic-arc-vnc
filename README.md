@@ -13,6 +13,8 @@
 It's much more convenient if you have SSH keys and proxies
 set up. (Proxy examples in [ssh_config](my_machine/ssh_config))
 
+TigerVNC viewer is suggested client. Binaries [here](https://bintray.com/tigervnc/stable/tigervnc/).
+
 - Create a SSH tunnel to the VNC session you created
   * You can use the script [vnctunnel](my_machine/vnctunnel)
   * Eg. `vnctunnel hebbe06-x:1`
